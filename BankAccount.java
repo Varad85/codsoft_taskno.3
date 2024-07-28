@@ -23,6 +23,11 @@ class BankAccount {
 }
 
     public boolean withdraw(double amount) {
+        if (amount <= 0) {
+            System.out.println("Withdrawal amount must be positive.");
+            return false;
+        }
+        
         if (amount <= balance) {
             balance -= amount;
             writeBalanceToFile();
