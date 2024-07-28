@@ -7,6 +7,7 @@ class BankAccount {
     public BankAccount() {
         this.balance = readBalanceFromFile();
     }
+
     public double getBalance() {
         return balance;
     }
@@ -15,4 +16,14 @@ class BankAccount {
         balance += amount;
         writeBalanceToFile();
     }
+
+    public boolean withdraw(double amount) {
+        if (amount <= balance) {
+            balance -= amount;
+            writeBalanceToFile();
+            return true;
+        }
+        return false;
+    }
+
 }
