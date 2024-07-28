@@ -7,4 +7,12 @@ class BankAccount {
     public BankAccount() {
         this.balance = readBalanceFromFile();
     }
+    public double getBalance() {
+        return balance;
+    }
+
+    public void deposit(double amount) {
+        balance += amount;
+        writeBalanceToFile();
+    }
 }
