@@ -13,9 +13,14 @@ class BankAccount {
     }
 
     public void deposit(double amount) {
+        if(amount > 0){
         balance += amount;
         writeBalanceToFile();
+        System.out.println("Deposit successful");
+    }else{
+        System.out.println("Deposit amount must be positive");
     }
+}
 
     public boolean withdraw(double amount) {
         if (amount <= balance) {
