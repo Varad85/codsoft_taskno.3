@@ -34,4 +34,12 @@ class BankAccount {
             return 1000; // Default initial balance
         }
     }
+
+    private void writeBalanceToFile() {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(BALANCE_FILE))) {
+            writer.write(String.valueOf(balance));
+        } catch (IOException e) {
+            System.out.println("Error saving balance: " + e.getMessage());
+        }
+    }
 }
